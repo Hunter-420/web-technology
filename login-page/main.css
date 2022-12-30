@@ -1,0 +1,114 @@
+body, html {   
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display:table;
+}
+body {
+    display:table-cell;
+    vertical-align:middle;
+    background-color: whitesmoke;
+}
+
+label
+{
+    font-weight: bold;
+}
+
+h1
+{
+    font-size: 100px;
+    color: wheat;
+
+}
+
+
+
+h2
+{
+    color: wheat;
+    font-size: 50px;
+    padding-top: 0px;
+    font-weight: 700;
+    background: linear-gradient(90deg, wheat, wheat,wheat);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: relative;
+}
+
+@keyframes shine {
+    0% {
+      background-position-x: -500%;
+    }
+    100% {
+      background-position-x: 500%;
+    }
+  }
+  
+  /*  Checkout my other pens on  https://codepen.io/grohit/  */
+  
+
+form {
+    display:table;/* shrinks to fit content */
+    margin:auto;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+#email
+{
+    margin-left: 15px;
+}
+
+#password
+{
+    margin-left: 15px;
+}
+
+form
+{
+    z-index: -1;
+    background-color: rgb(250, 125, 67);
+    padding: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+   
+    
+}
+
+input
+{
+    height: 50px;
+    width: 500px;
+    font-size: 20px;
+    border-radius: 10px;
+    border-color:  rgb(250, 125, 67);
+    background-color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+button
+{
+    font-size: 35px;
+    font-weight: 500;
+    justify-content: center;
+    justify-items: center;
+    margin-left: 40%;
+    border-radius: 10px;
+    background-color: wheat;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+
+
+a
+{
+    text-decoration: none;
+}
+
+
