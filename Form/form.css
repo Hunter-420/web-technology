@@ -1,0 +1,61 @@
+body
+{
+    background-color: whitesmoke;
+    padding-left: 20px;
+}
+
+label
+{
+    font-weight: bold;
+}
+
+input
+{
+    border-radius: 5px;
+}
+input:hover
+{
+    background-color: rgb(252, 249, 246);
+    border-radius: 5px;
+}
+
+#submit
+{
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#reset
+{
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.button
+{
+    padding: 0px 20px;
+}
+
+#submit:hover
+{
+    transition: 1s;
+    font-weight: bold;
+    font-size: medium;
+    background-color: lightgreen;
+    border-radius: 5px;
+}
+
+#reset:hover
+{
+    transition: 1s;
+    font-weight: bold;
+    font-size: medium;
+    background-color: lightcoral;
+    border-radius: 5px;
+}
+
+#ccmt_image
+{
+    width: 40%;
+}

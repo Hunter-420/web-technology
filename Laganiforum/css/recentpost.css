@@ -1,0 +1,48 @@
+.sidebar .header {
+    font-size: 28px;
+    padding: 2px 5px;
+    position: relative;
+    background-color: #B80000;
+    color: #fff;
+}
+.text-left {
+    text-align: left;
+}
+h1, a, p, h6, h3, small, samp, i, button div {
+    clear: both;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 400;
+}
+
+h4
+{
+    float: center;
+    /* margin-left: auto; */
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+user agent stylesheet
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.sidebar .header::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.li_image
+{
+    width: 100%;
+}

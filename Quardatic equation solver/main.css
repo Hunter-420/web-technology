@@ -1,0 +1,45 @@
+label
+{
+    font-weight: bold;
+}
+
+input
+{
+    border-radius: 5%;
+    
+}
+
+input:hover
+{
+    border-radius: 5%;
+    background-color: whitesmoke;
+   
+}
+
+a
+{
+    font-size: larger;
+    font-weight: bold;
+    background-color: yellowgreen;
+    color: black;
+    
+}
+
+#r
+{
+    margin-left: 82px;
+}
+
+#c
+{
+    margin-left: 8px;
+}
+
+#footer
+{
+    font-size: larger;
+    font-weight: bold;
+    background-color:whitesmoke;
+    color: black;
+    
+}

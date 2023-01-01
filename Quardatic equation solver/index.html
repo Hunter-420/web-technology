@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quadratic Equation solver using html form</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    
+    <body>
+        <h1>Quadratic Equation Solver Using Html Form</h1>
+        <label for="a">Coefficient of X2 : </label>
+        <input type="text" id="a" name="a" value="0" onclick="select()" onkeyup="cal(document.getElementById('a').id)"> 
+
+        <br><br>
+
+        <label for="b">Coefficient of X1 : </label>
+        <input type="text" id="b" name="b" value="0" onclick="select()" onkeyup="cal(document.getElementById('b').id)">
+
+       <br><br>
+
+        <label for="c">Coefficient of C  : </label>
+        <input type="text" id="c" name="c" value="0" onclick="select()" onkeyup="cal(document.getElementById('c').id)">
+
+        <br><br>
+
+        <label for="r">Root : </label>
+        <input type="text" id="r" name="r" value="0" >
+
+        <br><br><br><br><br>
+
+        <a href="quarjs.html">Click me to Solve Equation using javascript promt</a>
+        <br><br><br><br>
+        <h4>Coded by <a id="footer" href="https://github.com/Hunter-420">Nischal Khanal</a></h4>
+        <br>
+        <a id ="footer" href="https://github.com/Hunter-420/Quadratic-Equation">Click me to get source Code</a>
+        <script>
+            function check (val)
+            {
+                //alert(val);
+                var parseNum = Number(val);
+                var parseInteger = parseInt(val);
+                //checking parse Number is equal to parse integer or not
+                //parse Number is convert whole string into number
+                //But parse integer only convert first number in the string if there is some whitespace & charecter is present in string than 
+                //after that it can't take or consider that as a Integer
+                if(isNaN(parseNum && parseInteger) && parseNum!=parseInteger)
+                {
+                    //alert("Invalid Input ");
+                    return 1;
+                    
+                }
+                else
+                {
+                    return 0;
+                } 
+            }
+
+            function cal(IDD)
+            {
+                //assign ID value to the local variable DYNAMICALLY
+                var idval= document.getElementById(IDD).value;
+
+                //Check the ID value --- IS the id value is numeric or some other charecter 
+                var chek = check(idval);
+
+                //If the id value is not valid the this if block will be executed
+                if(chek)
+                {
+                    document.getElementById(IDD).focus();
+                    //select the input box
+                    document.getElementById(IDD).select();
+
+                    document.getElementById("r").style.background= "red";
+                    document.getElementById("r").value = "Invalid Input Value";
+                    
+                }
+                
+                else
+                {
+                    //get all input value with the help of ID && asign to a local variable
+                    document.getElementById("r").style.background= "lightgreen";
+                    var a = document.getElementById("a").value;
+                    var b = document.getElementById("b").value;
+                    var c = document.getElementById("c").value;
+                    
+                    //calculate the value which is under the sqareRoot
+                    var d = Math.pow(b,2)-4*a*c;
+
+                    if(d<0)
+                    {
+                        //give a chance to user they want imaginary root or not
+                        //confirm function return either "true" or "false"
+                        var choice = confirm("Your roots are imaginary\nDid you really want to continue?");
+                        
+                        //if user choose ok then confirm return "true" && if user choose cancel then "false" will be returned
+
+                        //if user choose "OK" then this block wil be executed
+                        if(choice)
+                        {
+                            //Math.abs() --> used for modulus && Math.sqrt() --> used for square root
+                            //this block will be executed if the value of d ie. sqrt(b2 -4*a*c) is less than 0
+                            //At that condition we should need to change the negative sign of the value which is under the squarRoot that's why at first 
+                            //we use Math.abs() function && after changing the negative sign of under sqrt value we calculate the perfom squarRoot operation 
+                            //for that we use Math.sqrt() 
+                            var D = Math.sqrt(Math.abs(d));
+                            var root1 = -b/(2*a);
+                            var root2 = D/(2*a);
+                            
+                            //toFixed(arg) function is used to get desired digits after decimal
+                            var out =  root1.toFixed(2) + "   \xB1   "  + root2.toFixed(2) + " i"
+                            //set the value of Root whose id is "r"
+                            document.getElementById("r").value = out;
+                        }
+
+                        //if the user choose cancel then this block will be executed
+                        else
+                        {
+                            alert("Thank you!!\n Refresh your browser and try again");
+                            
+                            //reassgin all of the input value to ---> 0
+                            document.getElementById("a").value = 0;
+                            document.getElementById("b").value = 0;
+                            document.getElementById("c").value = 0;
+                            document.getElementById("r").value = 0;
+
+                            //focus & select first input value box
+                            document.getElementById("a").focus();
+                            document.getElementById("a").select();
+                        }
+
+                    }
+
+                    else
+                    { 
+                        var D = Math.sqrt(d);
+                        root1 = (-b + D)/(2*a);
+                        root2 = (-b - D)/(2*a);
+                        var out =  root1.toFixed(2) + "   ,   "  + root2.toFixed(2)
+                        document.getElementById("r").value = out;
+                    }
+                        }
+                    }
+        </script>
+    </body>
+</html>

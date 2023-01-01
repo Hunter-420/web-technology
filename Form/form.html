@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="form.css">
+        <title>Registration Form</title>
+    </head>
+
+    <body>
+        <img src="img/ccmt.png" alt="Cosmos College of Management and Technology" id="ccmt_image"/>
+        <h1>Registration Form of Cosmos College</Form></h1>
+        <form method="get" action="./">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name"/>
+
+            <br><br>
+
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email"/>
+
+            <br><br>
+
+            <label for="gender">Gender: </label>
+            <input type="radio" name="gender" value="male" checked="checked">Male
+            <input type="radio" name="gender" value="female">Female
+
+            <br><br>
+
+            <label for="interest">Interest</label>
+            <input type="checkbox" name="interest" id="interest" value="1" />Music
+            <input type="checkbox" name="interest" id="interest" value="2" checked="checked" />Coding
+            <input type="checkbox" name="interest" id="interest" value="3" />Art
+            <input type="checkbox" name="interest" id="interest" value="4" />Movies
+
+            <br><br>
+
+            <label for="faculty">Faculty: </label>
+            <select name="faculty" id="faculty">
+                <option value="1" selected="selected">Information Technology</option>
+                <option value="2" >Computer</option>
+                <option value="3">Electronics</option>
+            </select>
+
+            <br><br>
+
+            <label for="languages">Languages: </label>
+            <select name="languages" id="languages">
+                <option value="1" selected="selected">Nepali</option>
+                <option value="2">Hindi</option>
+                <option value="3">English</option>
+            </select>
+
+            <br><br>
+
+            <label for="introduction">Tell us about yourself</label>
+            <br>
+            <textarea name="introduction" id="introduction" maxlength="500" cols="50" rows="10" placeholder="Max charecter 500"></textarea>
+           
+            <br><br>
+
+            <label for="username">Username: </label>
+            <input type="text" name="username" id="username"/>
+
+            <br><br>
+
+            <label for="userpass">Password: </label>
+            <input type="password" name="userpass" id="userpass"/>
+
+            <br><br>
+
+            <input type="submit" class="button" id="submit" value="submit"/>
+            <input type="reset" class="button" id="reset" value="reset"/>
+        </form>
+    </body>
+</html>

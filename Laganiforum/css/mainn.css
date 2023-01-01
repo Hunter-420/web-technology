@@ -1,0 +1,27 @@
+.flextitle
+{
+    display:grid;
+    float: grid;
+    width: 50%;
+    margin-top: 50px;
+    font-size: 24px;
+    color: black;
+    font-weight: 500px;
+}
+
+.flextitle:hover
+{
+    color: green;
+}
+
+.fleximage img
+{
+    width: 400px;
+    height: 300px;
+    float: right;
+
+}
+
+#n{
+    text-decoration: none;
+}

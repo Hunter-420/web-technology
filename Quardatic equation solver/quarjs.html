@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quardatic Equation Solver Using JS only</title>
+    </head>
+
+    <body>
+        <script>
+
+            //checking user input valid or not
+            function check (val)
+            {
+                var parseNum = Number(val);
+                var parseInteger = parseInt(val);
+                //checking parse Number is equal to parse integer or not
+                //parse Number is convert whole string into number
+                //But parse integer only convert first number in the string if there is some whitespace & charecter is present in string than 
+                //after that it can't take or consider that as a Integer
+                if(isNaN(parseNum && parseInteger) && parseNum!=parseInteger)
+                {
+                    //alert("Invalid Input ");
+                    return 0;
+                    
+                }
+                else
+                {
+                    return 1;
+                } 
+            }
+
+            do
+            {
+                var a = prompt("Coefficient of X2");
+                var checking = check(a);
+            }while(checking!=1);
+
+            do
+            {
+                var b = prompt("Coefficient of X1");
+                var checking = check(b);
+            }while(checking!=1);
+
+            do
+            {
+                var c = prompt("Coefficient of C");
+                var checking = check(c);
+            }while(checking!=1);
+
+            
+            
+            var d = Math.pow(b,2)-4*a*c;
+
+            if(d<0)
+            {
+                var choice = confirm("Your roots are imaginary\nDid you really want to continue?");
+                
+                if(choice)
+                {
+                    var D = Math.sqrt(Math.abs(d));
+                    var root1 = -b/(2*a);
+                    var root2 = D/(2*a);
+                    alert("Root :\n" + root1 + "   \xB1   "  + root2 + " i");
+                }
+
+                else
+                {
+                    alert("Thank you!!\n Refresh your browser and try again");
+                }
+
+            }
+
+            else
+            { 
+                var D = Math.sqrt(d);
+                root1 = (-b + D)/(2*a);
+                root2 = (-b - D)/(2*a);
+                alert("Root 1 : " + root1 + "\nRoot 2 : " + root2);
+            }
+        </script>
+    </body>
+</html>

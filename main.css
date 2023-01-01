@@ -1,0 +1,13 @@
+body {
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+h3 {
+    color: brown;
+}
+
+input {
+    background-color: gray;
+    height: 20px;
+}

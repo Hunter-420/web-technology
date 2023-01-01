@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation Using JS</title>
+    </head>
+
+    <body>
+        <h1>Form Validation Using JS</h1>
+        <!-- html form -->
+        <label for="name">Name : </label>
+        <input type="text" name="name" id="name" onblur="checkName()">
+        <br><br>
+
+        <label for="email">Email : </label>
+        <input type="text" name="email" id="email" onblur="checkEmail()">
+        <br><br>
+
+        <label for="contact">Contact No : </label>
+        <input type="text" name="contact" id="contact" onblur="checkContact()">
+        <br><br>
+
+        <button id="reset" onclick="resetForm()">Reset</button>
+
+        <!-- for footer -->
+        <h3>&#169; Coded by <a href="https://github.com/Hunter-420" class="footer">Nischal Khanal</a></h3>
+        <br>
+        <button class="glow-on-hover" type="button"><a href="" style="text-decoration: none;">Click Me For Source Code</a></button>
+        <!-- <a href="" id="sourceCode" class="glow-on-hover">For Source Click Me!!</a> -->
+
+        <!-- form validation using js -->
+        <script>
+            function checkName()
+            {
+                var name = document.getElementById("name").value;
+                if(name==null || name=="")
+                {
+                    //alert("Name can't be blank");
+                    document.getElementById("name").focus();
+                    document.getElementById("name").select();
+                }
+            }
+
+            function checkContact()
+            {
+                //check input in number or not 
+                var contact = document.getElementById("contact").value;
+                var parseInteger = parseInt(contact);
+                if(isNaN(parseInteger))
+                {
+                    //alert("Name can't be blank");
+                    document.getElementById("contact").focus();
+                    document.getElementById("contact").select();
+                    
+                }
+                
+                //check length of the contact 
+                if(parseInteger.length!=10)
+                {
+                    //alert("Name can't be blank");
+                    document.getElementById("contact").focus();
+                    document.getElementById("contact").select();
+                }
+            }
+
+            
+            function checkEmail()
+            {
+                var email = document.getElementById("email").value;
+
+                //checking ending of the email
+                if(email.endsWith("@gmail.com") || email.endsWith("@hotmail.com") || email.endsWith("@yahoo.com") || email.endsWith("@outlook.com"))
+                {
+
+                    
+                }
+
+                else 
+                {
+                    //alert("Name can't be blank");
+                    document.getElementById("email").focus();
+                    document.getElementById("email").select();
+                }
+            }
+
+            function resetForm()
+            {
+                document.getElementById("name").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("contact").value = "";
+            }
+        </script>
+
+
+        <!-- css for form -->
+        <style>
+            body
+            {
+                background-color: whitesmoke;
+            }
+            #name,#email
+            {
+                margin-left: 35px;
+            }
+
+            #reset
+            {
+                margin-top:20px ;
+                margin-left:100px ;
+                border-radius: 5px;
+                background-color: yellow;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            #reset:hover
+            {
+                margin-top:20px ;
+                margin-left:100px ;
+                border-radius: 5px;
+                background-color: yellowgreen;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            label
+            {
+                font-weight: bold;
+            }
+
+            .footer 
+            {
+                text-decoration: none;
+            }
+
+
+            
+            .glow-on-hover {
+                width: 180px;
+                height: 30px;
+                border: none;
+                outline: none;
+                color: #fff;
+                background: green;
+                cursor: pointer;
+                position: relative;
+                z-index: 0;
+                border-radius: 10px;
+                
+                
+            }
+            
+            .glow-on-hover:before {
+                content: '';
+                background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                position: absolute;
+                top: -2px;
+                left:-2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing 20s linear infinite;
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+                border-radius: 10px;
+            }
+            
+            .glow-on-hover:active {
+                color: #000
+            }
+            
+            .glow-on-hover:active:after {
+                background: transparent;
+            }
+            
+            .glow-on-hover:hover:before {
+                opacity: 1;
+            }
+            
+            .glow-on-hover:after {
+                z-index: -1;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: white;
+                left: 0;
+                top: 0;
+                border-radius: 10px;
+            }
+            
+            @keyframes glowing {
+                0% { background-position: 0 0; }
+                50% { background-position: 400% 0; }
+                100% { background-position: 0 0; }
+            }
+
+        </style>
+    </body>
+
+</html>
